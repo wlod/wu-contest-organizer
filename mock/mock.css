@@ -1,0 +1,325 @@
+/** General **/
+body, h1, h2, h3, h4, h5, h6 {
+    background-color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/** App **/
+.app-container {
+    min-height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    height: auto;
+    background-image: url('../assets/colosseum-coliseum-flavian-amphitheatre-rome_Anastasia-Zhenina_1440x960.jpg');
+}
+
+.app-container:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: .3;
+}
+
+.app-container a.owner {
+    position: absolute;
+    z-index: 1000;
+    top: 20px;
+    left: 20px;
+}
+
+.app-container a.owner div.owner-container div.owner-github-logo {
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid;
+    color: #333333;
+    width: 50px;
+    float: left;
+}
+
+.app-container a.owner div.owner-container div.owner-github-logo img {
+    width: 50px;
+    border: 0px;
+    vertical-align: middle;
+}
+
+.app-container a.owner div.owner-container div.owner-details {
+    width: 200px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    line-height: 20px;
+    font-size: 18px;
+    color: #FFF;
+}
+
+.app-container .register-contest-container {
+    padding-top: 95px;
+}
+
+.app-container .register-contest-container .register-contest-container-form {
+    min-height: 400px;
+    background-color: #FFF;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.app-container .register-contest-container .register-contest-container-form .register-contest-container-form-header {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.app-container .register-contest-container .register-contest-container-form .register-contest-container-form-header h3 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: 5px 15px;
+    display: inline-block;
+    border: 1px solid #dad8e4;
+    margin: 0 0 15px 0;
+}
+
+.app-container .register-contest-container .register-contest-container-form .tab-content {
+    min-height: 300px;
+}
+
+/** Tabs navigation **/
+.nav a.nav-link, .nav button.nav-link {
+    display: none;
+    visibility: hidden;
+    /* TODO override default size */
+    width: 100px;
+    height: 25px;
+}
+
+.nav a.prev {
+    margin-right: 15px;
+}
+
+.nav a.next, .nav a.prev, .nav button.next {
+    display: block;
+    visibility: visible;
+    position: relative;
+}
+
+.nav a.next:after, .nav a.prev:after, .nav button.next:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.nav a[data-step].next:after {
+    content: "Next (" attr(data-step) ")";
+}
+
+.nav a[data-step].prev:after {
+    content: "Prev (" attr(data-step) ")";
+}
+
+.nav button[data-create].next:after {
+    content: attr(data-create);
+}
+
+/** Tabs **/
+.tab-content>.tab-pane {
+    display: none;
+    visibility: hidden;
+}
+
+.tab-content>.active {
+    display: block;
+    visibility: visible;
+}
+
+.radio-icons .individual {
+    background-image:url('../assets/wood-dark-close-up-view-blur-136349_345_230.jpg');
+    background-size: 100% 175px !important;
+}
+
+.radio-icons .team {
+    background-image:url('../assets/black-board-board-game-checkerboard-459275_345_230.jpg');
+    background-size: 100% 175px !important;
+}
+
+.radio-icons .repository-private {
+    background-image:url('../assets/repository-private.png');
+    background-size: 100% 175px !important;
+}
+
+.radio-icons .repository-public {
+    background-image:url('../assets/repository-public.png');
+    background-size: 100% 175px !important;
+}
+
+.radio-icons input:active +.radio-icons-label {
+    opacity: .9;
+}
+
+.radio-icons input:checked +.radio-icons-label {
+    -webkit-filter: none;
+    filter: none;
+}
+
+.radio-icons input {
+    margin:0;
+    padding:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+
+.radio-icons-label {
+    margin:0;
+    padding:0;
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100%;
+    height:175px;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+    filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+
+.radio-icons-label:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+    filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+.input-box {
+    background-color: transparent;
+    display: inline-block;
+    border: 1px solid #dad8e4;
+    margin: 0 15px 15px 0;
+    cursor: pointer;
+}
+
+.input-box:hover {
+    border: 1px solid #007bff;
+}
+
+.input-box-disabled{
+    border: 1px solid #000;
+    background-color: #DDD !important; /* TODO remove important */
+    color: #FFF !important; /* TODO remove important */
+}
+
+.input-box-disabled:hover{
+    border: 1px solid #000;
+}
+
+.input-box input.form-check-input ~ label.form-check-label,
+.was-validated .input-box input.form-check-input:valid ~ label.form-check-label,
+.was-validated .input-box input.form-check-input:invalid ~ label.form-check-label {
+    cursor: pointer;
+    background-size:contain;
+    width: 101%; /* container border */
+    height: 104%; /* container border */
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    padding: 5px 15px;
+    color: #000;
+    margin-top: -1px; /* container border */
+    margin-left: -1px; /* container border */
+}
+
+.input-box input.form-check-input:disabled ~ label.form-check-label {
+    cursor: not-allowed;
+}
+
+.input-box input {
+    margin:0;
+    padding:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+
+.input-box input.form-check-input:valid ~ label.form-check-label:hover {
+    background-color: transparent;
+    color: #007bff;
+}
+
+.input-box input.form-check-input:disabled ~ label.form-check-label:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+.input-box input:checked +.input-box-checked {
+    background-color: #007bff !important; /* !important - override :hover background-color style */
+    color: #FFF !important; /* !important - override :hover color style */
+}
+
+.form-control.is-valid, .was-validated .form-control:valid {
+    border-color: #007bff;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA4IDgnPjxwYXRoIGZpbGw9JyMwMDdiZmYnIGQ9J00yLjMgNi43M0wuNiA0LjUzYy0uNC0xLjA0LjQ2LTEuNCAxLjEtLjhsMS4xIDEuNCAzLjQtMy44Yy42LS42MyAxLjYtLjI3IDEuMi43bC00IDQuNmMtLjQzLjUtLjguNC0xLjEuMXonLz48L3N2Zz4=");
+}
+
+.form-control:hover, .form-control:focus  {
+    border-color: #007bff !important;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, .25) !important;
+}
+
+.invalid-feedback-wld-source-message {
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#kind-contest,
+.custom-control-input ~ .custom-control-label,
+.was-validated .custom-control-input:valid ~ .custom-control-label {
+    color: #000;
+    cursor: pointer;
+}
+
+.custom-control-input + .custom-control-label:hover {
+    color: #007bff;
+}
+
+.custom-control-input + .custom-control-label:hover:before {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, .25) !important;
+    border-color: #007bff !important;
+}
+
+.custom-control-input + .custom-control-label:hover, .was-validated .custom-control-input + .custom-control-label:hover {
+    color: #007bff;
+}
+
+.custom-control-input ~ .custom-control-label:hover:before,
+.was-validated .custom-control-input ~ .custom-control-label:hover:before,
+.was-validated .custom-control-input ~ .custom-control-label:active:before,
+.was-validated .custom-control-input ~ .custom-control-label:focus:before {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, .25) !important;
+}
+
+.was-validated .custom-control-input ~ .custom-control-label:before {
+    box-shadow: none !important;
+}
+
+.was-validated .custom-checkbox .custom-control-input:checked ~ .custom-control-label:before {
+    border-color: #007bff !important;
+    background-color: #007bff !important;
+}
+
+.was-validated .custom-checkbox .custom-control-input:valid ~ .custom-control-label::before {
+    border-color: #adb5bd !important;
+}
