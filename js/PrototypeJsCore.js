@@ -1,3 +1,5 @@
+"use strict";
+
 if (!Array.prototype.forEach) {
     Array.prototype.forEach = function (fun /* , thisParam */) {
         let len = this.length;
@@ -14,7 +16,6 @@ if (!Array.prototype.forEach) {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf#Polyfill
 if (!Array.prototype.indexOf) {
     Array.prototype.indexOf = (function (Object, max, min) {
-        "use strict";
         return function indexOf(member, fromIndex) {
             if (this === null || this === undefined)
                 throw TypeError("Array.prototype.indexOf called on null or undefined");
@@ -46,7 +47,6 @@ if (!Array.prototype.indexOf) {
 // https://stackoverflow.com/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript
 if (!String.prototype.includes) {
     String.prototype.includes = function(search, start) {
-        'use strict';
         if (typeof start !== 'number') {
           start = 0;
         }
