@@ -2,7 +2,7 @@
 
 // TODO move to vendors
 import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.min.js'
-import { MountedController } from "./MountedController.js";
+import { WizardBindAction } from "./../view/WizardBindAction.js";
 import { WizardHeader, WizardTabContent } from "./components/WizardComponents.js";
 
 class App {
@@ -29,7 +29,8 @@ class App {
             },
 
             mounted() {
-                new MountedController();
+                const wizardBindAction = new WizardBindAction();
+                wizardBindAction.bindView();
             },
 
             methods: {

@@ -60,6 +60,15 @@ body, h1, h2, h3, h4, h5, h6 {
     color: #FFF;
 }
 
+/** Global manage contest **/
+
+.app-container .manage-contest-container {
+    padding-top: 95px;
+}
+
+
+/** Global register contest **/
+
 .app-container .register-contest-container {
     padding-top: 95px;
 }

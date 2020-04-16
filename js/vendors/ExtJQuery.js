@@ -54,7 +54,6 @@ jQuery.fn.extend({
 
         if (invalidFeedbackMessages.length > 0) {
 
-            // if none exist any elements, use the result of global validation
             let innerValidated = true;
 
             invalidFeedbackMessages.each(function(i) {
