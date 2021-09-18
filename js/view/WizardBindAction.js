@@ -1,5 +1,6 @@
 "use strict";
 
+
 // TODO - functionality should be split
 class WizardBindAction {
 
@@ -9,12 +10,12 @@ class WizardBindAction {
 
     bindView() {
 
-        const tabCount = $('#register-contest-container-form').find('div.tab-content div.tab-pane').length;
-        const tabPanePrefix = '#tab-pane-';
-        const lastTabPaneHash = tabPanePrefix + tabCount;
         const form = $('#register-contest-container-form');
+        const tabCount = form.find('div.tab-content div.tab-pane').length;
+        const tabPanePrefix = '#tab-pane-';
+
         const manageHash = "#manage";
-        var currentHash = '#' + $('#register-contest-container-form').find('div.tab-content div.tab-pane')[0].id;
+        var currentHash = '#' + form.find('div.tab-content div.tab-pane')[0].id;
         var lastClickOnNavigationTabId = currentHash;
         // TODO hashchange
         var lastURL = document.URL;
@@ -64,7 +65,7 @@ class WizardBindAction {
                 lastClickOnNavigationTabId = $(this).attr('href');
                 // [next] & [prev] buttons should save form data
                 sessionStorage['register-contest-container-form-data'] =  btoa($("#register-contest-container-form").serialize());
-
+                console.log(atob(sessionStorage['register-contest-container-form-data']));
                 if($(this).hasClass('next')) {
                     const tabIdToValidate = $(this).prev().attr('aria-controls');
 
@@ -100,7 +101,7 @@ class WizardBindAction {
             const registerContestContainerFormData = sessionStorage['register-contest-container-form-data'];
             if (typeof registerContestContainerFormData !== "undefined") {
                 $('#register-contest-container-form').hide();
-                $('#manage-contest-container').text( atob(registerContestContainerFormData) );
+                $('#manage-contest-container').text(atob(registerContestContainerFormData));
                 $('#manage-contest-container').show();
                 location.hash = (manageHash);
             }

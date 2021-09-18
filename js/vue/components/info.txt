@@ -1,0 +1,1 @@
+For now file per functionality: wizard, manage-contest etc.
